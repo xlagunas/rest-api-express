@@ -19,7 +19,14 @@
   "dependencies": {
     "mongoskin": "1.4.1",
     "express": "4.8.1",
-    "body-parser": "1.0.2"
+    "body-parser": "1.0.2",
+    "node-schedule": "0.1.13",
+    "cheerio": "0.17.0",
+    "sync-request": "1.0.1",
+    "underscore": "1.7.0",
+    "request": "2.44.0",
+    "html-minifier": "0.6.8"
+
   },
   "devDependencies": {
     "expect.js": "0.3.1",
