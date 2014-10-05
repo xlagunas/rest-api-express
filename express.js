@@ -9,7 +9,7 @@ var serverAddress = "http://localhost";
 var serverPort = 3000;
 app.use(bodyParser({limit: '50mb'}));
 
-var db = mongoskin.db('mongodb://localhost:27017/uaa', {safe:true});
+var db = mongoskin.db('mongodb://localhost:27017/onJugo', {safe:true});
 
 app.param('collectionName', function(req, res, next, collectionName){
   req.collection = db.collection(collectionName);
@@ -62,7 +62,6 @@ app.post('/collections/:collectionName/import', function(req, res, next) {
     if (req.collection._collection_args[0] === 'franchise'){
         req.collection.remove({}, {}, function(e, results){
             if (e) return next(e);
-            console.log(results);
         });
         req.collection.insert(data, {}, function(e, results){
            if (e) return next(e);
@@ -84,3 +83,5 @@ var j = schedule.scheduleJob(rule, function() {
     parser.asyncRequests(serverAddress+":"+serverPort+'/collections/franchise/import');
     console.log("parse data..." +new Date());
 });
+
+parser.asyncRequests(serverAddress+":"+serverPort+'/collections/franchise/import');

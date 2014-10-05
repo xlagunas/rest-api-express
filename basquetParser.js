@@ -148,7 +148,6 @@ var asyncRequests = function (postUrl) {
         }], function (error, result) {
         if (error) console.log("Error al callback final "+ error);
         else{
-            console.log(JSON.stringify(result));
             console.log('finished at '+new Date());
             request({uri: postUrl, method: 'POST', json:result},
             function (error, response, html){
