@@ -154,7 +154,6 @@ var asyncRequests = function (postUrl) {
                 if (error) console.log(error);
                 else{
                     console.log('successfully posted to server');
-                    console.log(html);
                 }
             });
         }
